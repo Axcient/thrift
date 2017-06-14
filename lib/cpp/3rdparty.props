@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <AGENT_ROOT>\ReplibitLLC\ReplibitAgent</AGENT_ROOT>
+    <AGENT_ROOT>$(SolutionDir)\..\..\..</AGENT_ROOT>
     <BOOST_ROOT>$(AGENT_ROOT)\boost</BOOST_ROOT>
     <OPENSSL_ROOT_DIR>$(AGENT_ROOT)\openssl</OPENSSL_ROOT_DIR>
     <LIBEVENT_ROOT>$(AGENT_ROOT)\libevent</LIBEVENT_ROOT>

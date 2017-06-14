@@ -41,6 +41,7 @@ erl_crash.dump
 .DS_Store
 .svn
 .vagrant
+.vs
 
 /contrib/.vagrant/
 /aclocal/libtool.m4

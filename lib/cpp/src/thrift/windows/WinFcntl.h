@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements. See the NOTICE file
  * distributed with this work for additional information
@@ -32,6 +32,12 @@
 #include <string>
 #endif
 
+#if WINVER != 0x0501
+	#pragma message ("Had to redefine WINVER in WinFcntl.h")
+	#undef WINVER
+	#define WINVER 0x0501
+#endif
+
 // Win32
 #include <Winsock2.h>
 #include <thrift/transport/PlatformSocket.h>
@@ -42,6 +48,8 @@ struct thrift_pollfd {
   SHORT events;
   SHORT revents;
 };
+#else
+	#pragma message ("Compiling non-compatible code")
 #endif
 
 extern "C" {

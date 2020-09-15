@@ -26,6 +26,7 @@
 
 #include <thrift/windows/Sync.h>
 #include <boost/noncopyable.hpp>
+#define NOMINMAX
 #include <Windows.h>
 
 /*

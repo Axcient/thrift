@@ -88,6 +88,7 @@ int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout) {
   return sktready;
 }
 #else  // Vista, Win7...
+#pragma message ("Compiling non-compatible code")
 int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout) {
   return WSAPoll(fdArray, nfds, timeout);
 }

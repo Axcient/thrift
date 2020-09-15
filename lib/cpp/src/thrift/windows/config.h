@@ -98,6 +98,7 @@ typedef boost::uint8_t uint8_t;
 #include <thrift/windows/SocketPair.h>
 
 // windows
+#define NOMINMAX
 #include <Winsock2.h>
 #include <ws2tcpip.h>
 #ifndef __MINGW32__

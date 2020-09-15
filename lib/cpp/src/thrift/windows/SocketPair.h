@@ -29,6 +29,7 @@
 #endif
 
 // Win32
+#define NOMINMAX
 #include <Winsock2.h>
 #include <thrift/thrift-config.h>
 

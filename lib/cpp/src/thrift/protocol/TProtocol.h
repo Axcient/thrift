@@ -22,6 +22,7 @@
 
 #ifdef _WIN32
 // Need to come before any Windows.h includes
+#define NOMINMAX
 #include <Winsock2.h>
 #endif
 

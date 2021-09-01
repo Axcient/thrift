@@ -192,6 +192,8 @@ public:
    */
   void setKeepAlive(bool keepAlive);
 
+
+  void TSocket::setTimeoutKeepAlive(int keepalive_time, int keepalive_interval);
   /**
    * Get socket information formatted as a string <Host: x Port: x>
    */

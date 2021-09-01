@@ -99,6 +99,7 @@ typedef boost::uint8_t uint8_t;
 
 // windows
 #define NOMINMAX
+#include <MSTcpIP.h>
 #include <Winsock2.h>
 #include <ws2tcpip.h>
 #ifndef __MINGW32__

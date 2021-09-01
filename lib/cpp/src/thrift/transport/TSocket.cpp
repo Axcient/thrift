@@ -780,6 +780,39 @@ void TSocket::setKeepAlive(bool keepAlive) {
   }
 }
 
+void TSocket::setTimeoutKeepAlive(int keepalive_time, int keepalive_interval) {
+
+  if (socket_ == THRIFT_INVALID_SOCKET) {
+    return;
+  }
+  if (!keepAlive_) {
+    return;
+  }
+
+  struct tcp_keepalive vals;
+  std::memset(&vals, 0, sizeof(vals));
+
+  // non-zero means "enable"
+  vals.onoff = 1;              
+  // The keepalivetime member specifies the timeout, in milliseconds 
+  // with no activity until the first keep-alive packet is sent
+  vals.keepalivetime = keepalive_time;
+  // The keepaliveinterval member specifies the interval, in milliseconds
+  // between when successive keep-alive packets are sent if no acknowledgement is received   
+  vals.keepaliveinterval = keepalive_interval; // milliseconds
+
+  DWORD numBytesReturned = 0;   // not really used AFAICT
+
+  int ret = WSAIoctl(socket_, SIO_KEEPALIVE_VALS, &vals, sizeof(vals), nullptr, 0,
+                     &numBytesReturned, nullptr, nullptr);
+
+  if (ret == -1) {
+    int errno_copy
+        = THRIFT_GET_SOCKET_ERROR; // Copy THRIFT_GET_SOCKET_ERROR because we're allocating memory.
+    GlobalOutput.perror("TSocket::setSendTimeoutKeepAlive() setsockopt() " + getSocketInfo(), errno_copy);
+  }
+}
+
 void TSocket::setMaxRecvRetries(int maxRecvRetries) {
   maxRecvRetries_ = maxRecvRetries;
 }

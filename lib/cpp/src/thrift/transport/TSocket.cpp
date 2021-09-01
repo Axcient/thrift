@@ -785,12 +785,8 @@ void TSocket::setTimeoutKeepAlive(int keepalive_time, int keepalive_interval) {
   if (socket_ == THRIFT_INVALID_SOCKET) {
     return;
   }
-  if (!keepAlive_) {
-    return;
-  }
 
-  struct tcp_keepalive vals;
-  std::memset(&vals, 0, sizeof(vals));
+  struct tcp_keepalive vals{};
 
   // non-zero means "enable"
   vals.onoff = 1;              
@@ -803,10 +799,8 @@ void TSocket::setTimeoutKeepAlive(int keepalive_time, int keepalive_interval) {
 
   DWORD numBytesReturned = 0;   // not really used AFAICT
 
-  int ret = WSAIoctl(socket_, SIO_KEEPALIVE_VALS, &vals, sizeof(vals), nullptr, 0,
-                     &numBytesReturned, nullptr, nullptr);
-
-  if (ret == -1) {
+  if (WSAIoctl(socket_, SIO_KEEPALIVE_VALS, &vals, sizeof(vals), nullptr, 0,
+        &numBytesReturned, nullptr, nullptr) == -1) {
     int errno_copy
         = THRIFT_GET_SOCKET_ERROR; // Copy THRIFT_GET_SOCKET_ERROR because we're allocating memory.
     GlobalOutput.perror("TSocket::setSendTimeoutKeepAlive() setsockopt() " + getSocketInfo(), errno_copy);

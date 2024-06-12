@@ -57,6 +57,7 @@
 #include <thrift/windows/SocketPair.h>
 
 // windows
+#define NOMINMAX
 #include <MSTcpIP.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>

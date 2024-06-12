@@ -23,6 +23,7 @@
 #  define _THRIFT_TRANSPORT_PLATFORM_SOCKET_H_
 
 #ifdef _WIN32
+#  define NOMINMAX
 #  include <winsock2.h>
 #  define THRIFT_GET_SOCKET_ERROR ::WSAGetLastError()
 #  define THRIFT_ERRNO (*_errno())

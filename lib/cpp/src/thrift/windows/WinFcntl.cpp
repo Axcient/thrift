@@ -58,7 +58,7 @@ int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout) {
       FD_SET(fdArray[i].fd, &read_fds);
     }
     // Write (out) socket
-    else if ((fdArray[i].events & THRIFT_POLLOUT) == THRIFT_POLLOUT) {
+    if ((fdArray[i].events & THRIFT_POLLOUT) == THRIFT_POLLOUT) {
       write_fds_ptr = &write_fds;
       FD_SET(fdArray[i].fd, &write_fds);
     }

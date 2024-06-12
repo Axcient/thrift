@@ -33,6 +33,7 @@
 #endif
 
 // Win32
+#define NOMINMAX
 #include <winsock2.h>
 #include <thrift/transport/PlatformSocket.h>
 

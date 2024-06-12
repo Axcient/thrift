@@ -36,8 +36,19 @@
 #include <winsock2.h>
 #include <thrift/transport/PlatformSocket.h>
 
+#if WINVER <= 0x0502 // XP, Server2003
+struct thrift_pollfd {
+  THRIFT_SOCKET fd;
+  SHORT events;
+  SHORT revents;
+};
+#endif
+
 extern "C" {
 int thrift_fcntl(THRIFT_SOCKET fd, int cmd, int flags);
+#if WINVER <= 0x0502 // XP, Server2003
+int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout);
+#endif
 }
 
 #ifdef _WIN32_WCE

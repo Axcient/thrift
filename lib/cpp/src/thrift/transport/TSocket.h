@@ -228,6 +228,11 @@ public:
    */
   void setKeepAlive(bool keepAlive);
 
+  /*
+   * set SIO_KEEPALIVE_VALS
+   */
+  void setTimeoutKeepAlive(int keepalive_time, int keepalive_interval);
+
   /**
    * Get socket information formatted as a string <Host: x Port: x>
    */

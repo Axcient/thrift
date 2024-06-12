@@ -29,7 +29,11 @@
 #include <unistd.h>
 #endif
 #ifdef HAVE_STRINGS_H
+#ifdef _WIN32
+#include <string.h> 
+#else
 #include <strings.h>
+#endif
 #endif
 #include <cstdlib>
 #include <cstring>

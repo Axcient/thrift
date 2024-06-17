@@ -95,6 +95,34 @@
     <ClCompile Include="src\thrift\transport\SocketCommon.cpp" />
     <ClCompile Include="src\thrift\transport\TSocketPool.cpp" />
     <ClCompile Include="src\thrift\windows\OverlappedSubmissionThread.cpp" />
+    <ClCompile Include="src\thrift\transport\THeaderTransport.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\transport\THttpClient.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\transport\THttpServer.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\transport\TSSLServerSocket.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\transport\TSSLSocket.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\transport\TWebSocketServer.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\transport\TZlibTransport.cpp">
+      <Filter>transport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\protocol\THeaderProtocol.cpp">
+      <Filter>protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\async\TAsyncProtocolProcessor.cpp">
+      <Filter>async</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thrift\VirtualProfiling.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\thrift\transport\TBufferTransports.h">
@@ -204,6 +232,132 @@
     </ClInclude>
     <ClInclude Include="src\thrift\TOutput.h" />
     <ClInclude Include="src\thrift\windows\OverlappedSubmissionThread.h" />
+    <ClInclude Include="src\thrift\transport\PlatformSocket.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\SocketCommon.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\THeaderTransport.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\THttpClient.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\THttpServer.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\THttpTransport.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TShortReadTransport.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TSocketPool.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TSocketUtils.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TSSLServerSocket.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TSSLSocket.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TWebSocketServer.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\transport\TZlibTransport.h">
+      <Filter>transport</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\windows\Sync.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\server\TConnectedClient.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\server\TServerFramework.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TBase64Utils.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TCompactProtocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TEnum.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\THeaderProtocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TList.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TMap.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TProtocolDecorator.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TProtocolException.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TProtocolTap.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TProtocolTypes.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\protocol\TSet.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\processor\StatsProcessor.h">
+      <Filter>processor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\async\TAsyncBufferProcessor.h">
+      <Filter>async</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\async\TAsyncDispatchProcessor.h">
+      <Filter>async</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\async\TAsyncProcessor.h">
+      <Filter>async</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\async\TAsyncProtocolProcessor.h">
+      <Filter>async</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\FunctionRunner.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\Monitor.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\Mutex.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\Thread.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\ThreadFactory.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\ThreadManager.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\concurrency\TimerManager.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thrift\config.h" />
+    <ClInclude Include="src\thrift\TBase.h" />
+    <ClInclude Include="src\thrift\TConfiguration.h" />
+    <ClInclude Include="src\thrift\TDispatchProcessor.h" />
+    <ClInclude Include="src\thrift\thrift_export.h" />
+    <ClInclude Include="src\thrift\thrift-config.h" />
+    <ClInclude Include="src\thrift\TLogging.h" />
+    <ClInclude Include="src\thrift\TNonCopyable.h" />
+    <ClInclude Include="src\thrift\TToString.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="protocol">
@@ -233,6 +387,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="src\thrift\protocol\TBinaryProtocol.tcc">
+      <Filter>protocol</Filter>
+    </None>
+    <None Include="src\thrift\protocol\TCompactProtocol.tcc">
       <Filter>protocol</Filter>
     </None>
   </ItemGroup>

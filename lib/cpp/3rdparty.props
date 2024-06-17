@@ -6,6 +6,7 @@
     <BOOST_ROOT>$(AGENT_ROOT)\boost</BOOST_ROOT>
     <OPENSSL_ROOT_DIR>$(AGENT_ROOT)\openssl</OPENSSL_ROOT_DIR>
     <LIBEVENT_ROOT>$(AGENT_ROOT)\libevent</LIBEVENT_ROOT>
+    <ZLIB_ROOT>$(AGENT_ROOT)\zlib</ZLIB_ROOT>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
@@ -24,6 +25,10 @@
     </BuildMacro>
     <BuildMacro Include="LIBEVENT_ROOT">
       <Value>$(LIBEVENT_ROOT)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ZLIB_ROOT">
+      <Value>$(ZLIB_ROOT)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>

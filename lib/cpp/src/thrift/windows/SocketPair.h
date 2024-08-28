@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 #ifndef _THRIFT_WINDOWS_SOCKETPAIR_H_
 #define _THRIFT_WINDOWS_SOCKETPAIR_H_ 1
 

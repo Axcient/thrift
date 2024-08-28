@@ -42,7 +42,8 @@ int thrift_fcntl(THRIFT_SOCKET fd, int cmd, int flags) {
   return res;
 }
 
-#if WINVER <= 0x0502 // XP, Server2003
+#if TARGET_WIN_XP || (WINVER <= 0x0502) // XP, Server2003
+#pragma message("v0.20.0: Building 'thrift_poll'")
 int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout) {
   fd_set read_fds, write_fds;
   fd_set* read_fds_ptr = nullptr;
@@ -87,6 +88,8 @@ int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout) {
   }
   return sktready;
 }
+#else
+#pragma message("v0.20.0: Skipped building 'thrift_poll'")
 #endif // WINVER
 
 #ifdef _WIN32_WCE

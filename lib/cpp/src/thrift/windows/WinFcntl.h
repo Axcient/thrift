@@ -35,9 +35,11 @@
 // Win32
 #define NOMINMAX
 #include <winsock2.h>
+#include <thrift/windows/config.h>
 #include <thrift/transport/PlatformSocket.h>
 
-#if WINVER <= 0x0502 // XP, Server2003
+#if TARGET_WIN_XP || (WINVER <= 0x0502) // XP, Server2003
+#pragma message("v0.20.0: Enabled WinXP pollfd structure")
 struct thrift_pollfd {
   THRIFT_SOCKET fd;
   SHORT events;
@@ -47,7 +49,8 @@ struct thrift_pollfd {
 
 extern "C" {
 int thrift_fcntl(THRIFT_SOCKET fd, int cmd, int flags);
-#if WINVER <= 0x0502 // XP, Server2003
+#if TARGET_WIN_XP || (WINVER <= 0x0502) // XP, Server2003
+#pragma message("v0.20.0: Enabled WinXP poll function")
 int thrift_poll(THRIFT_POLLFD* fdArray, ULONG nfds, INT timeout);
 #endif
 }

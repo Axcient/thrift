@@ -71,7 +71,7 @@
 #  define THRIFT_SLEEP_USEC thrift_usleep
 #  define THRIFT_TIMESPEC thrift_timespec
 #  define THRIFT_CTIME_R thrift_ctime_r
-#  if WINVER <= 0x0502 //XP, Server2003
+#  if TARGET_WIN_XP || (WINVER <= 0x0502) //XP, Server2003
 #    define THRIFT_POLL thrift_poll
 #    define THRIFT_POLLFD  thrift_pollfd
 #    define THRIFT_POLLIN  0x0300
